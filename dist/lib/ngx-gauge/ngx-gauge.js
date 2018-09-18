@@ -327,20 +327,18 @@ class NgxGauge {
          * @return {?}
          */
         function animate(timestamp) {
+            const /** @type {?} */ requestID = requestAnimationFrame(animate);
             timestamp = timestamp || new Date().getTime();
             let /** @type {?} */ runtime = timestamp - startTime;
             let /** @type {?} */ progress = Math.min(runtime / duration, 1);
             let /** @type {?} */ previousProgress = ov ? ov * unit : 0;
             let /** @type {?} */ middle = start + previousProgress + displacement * progress;
             self._drawShell(start, middle, tail, color);
-            if (self._animationRequestID && (runtime < duration)) {
-                self._animationRequestID = window.requestAnimationFrame((timestamp) => animate(timestamp));
-            }
-            else {
-                window.cancelAnimationFrame(self._animationRequestID);
+            if (progress === 1) {
+                cancelAnimationFrame(requestID);
             }
         }
-        self._animationRequestID = window.requestAnimationFrame((timestamp) => {
+        requestAnimationFrame((timestamp) => {
             startTime = timestamp || new Date().getTime();
             animate(timestamp);
         });

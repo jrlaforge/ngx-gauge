@@ -606,20 +606,18 @@ var NgxGauge = /** @class */ (function () {
             displacement = unit * nv - unit * ov;
         }
         function animate(timestamp) {
+            var requestID = requestAnimationFrame(animate);
             timestamp = timestamp || new Date().getTime();
             var runtime = timestamp - startTime;
             var progress = Math.min(runtime / duration, 1);
             var previousProgress = ov ? ov * unit : 0;
             var middle = start + previousProgress + displacement * progress;
             self._drawShell(start, middle, tail, color);
-            if (self._animationRequestID && (runtime < duration)) {
-                self._animationRequestID = window.requestAnimationFrame(function (timestamp) { return animate(timestamp); });
-            }
-            else {
-                window.cancelAnimationFrame(self._animationRequestID);
+            if (progress === 1) {
+                cancelAnimationFrame(requestID);
             }
         }
-        self._animationRequestID = window.requestAnimationFrame(function (timestamp) {
+        requestAnimationFrame(function (timestamp) {
             startTime = timestamp || new Date().getTime();
             animate(timestamp);
         });
