@@ -16,14 +16,14 @@ A highly customizable Gauge component for **Angular >= 4.3.x || >=5.0.0**  apps 
 #### step 1: Install npm module
 
 ```bash
-npm install --save ngx-gauge 
+npm install --save jla-ngx-gauge
 ```
-This will install the current stable version of `ngx-gauge` in your `node_modules` directory and save the entry in `package.json`.
+This will install the current stable version of `jla-ngx-gauge` in your `node_modules` directory and save the entry in `package.json`.
 
 #### Step 2: Import the _NgxGaugeModule_ 
 
 ```ts
-import { NgxGaugeModule } from 'ngx-gauge';
+import { NgxGaugeModule } from 'jla-ngx-gauge';
 
 @NgModule({
     ...
