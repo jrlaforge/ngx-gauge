@@ -1,7 +1,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common')) :
 	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@angular/common'], factory) :
-	(factory((global['ngx-gauge'] = {}),global.ng.core,global.ng.common));
+	(factory((global['jla-ngx-gauge'] = {}),global.ng.core,global.ng.common));
 }(this, (function (exports,core,common) { 'use strict';
 
 /**
@@ -449,4 +449,4 @@ exports.ɵd = NgxGaugeValue;
 Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
-//# sourceMappingURL=ngx-gauge.umd.js.map
+//# sourceMappingURL=jla-ngx-gauge.umd.js.map
