@@ -179,7 +179,9 @@ export class NgxGauge implements AfterViewInit, OnChanges, OnDestroy {
     }
 
     private _clear() {
+      if(this._context) {
         this._context.clearRect(0, 0, this._getWidth(), this._getHeight());
+      }
     }
 
     private _getWidth() {
