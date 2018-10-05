@@ -358,7 +358,9 @@ var NgxGauge = /** @class */ (function () {
             var /** @type {?} */ progress = Math.min(runtime / duration, 1);
             var /** @type {?} */ previousProgress = ov ? ov * unit : 0;
             var /** @type {?} */ middle = start + previousProgress + displacement * progress;
-            self._drawShell(start, middle, tail, color);
+            if (self._context) {
+                self._drawShell(start, middle, tail, color);
+            }
             if (progress === 1) {
                 cancelAnimationFrame(requestID);
             }

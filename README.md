@@ -166,6 +166,14 @@ First thing first, explore the [issue tracker](https://github.com/ashish-chopra/
 
 If you face any problem, then raise an issue [here](https://github.com/ashish-chopra/ngx-gauge/issues).
 
+
+# Deploy the lib
+
+npm run build:lib
+npm login
+cd dist
+npm publish jla-ngx-gauge
+
 # License
 
 [MIT License](https://github.com/ashish-chopra/ngx-gauge/blob/master/LICENSE)

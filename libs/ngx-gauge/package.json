@@ -1,6 +1,6 @@
 {
     "name": "jla-ngx-gauge",
-    "version": "1.0.0-beta",
+    "version": "1.0.1-alpha",
     "description": "A highly customizable Gauge Component for Angular 4+ apps and dashboards (modif by jla)",
     "repository": {
         "type": "git",
